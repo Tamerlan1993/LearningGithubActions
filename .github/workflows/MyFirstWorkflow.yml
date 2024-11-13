@@ -8,14 +8,14 @@ jobs:
   MY_FIRST_JOB:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ":fire Starting Workflow"
+      - run: echo ":fire:Starting Workflow"
       
       - name: Checkout
         uses: actions/checkout@v4 
       
       - name: List files in repository
         run: |
-          echo "The repository ${{ github.repository }} contains th efollowing files:"
+          echo "The repository ${{ github.repository }} contains the following files:"
           tree
         
      
