@@ -26,5 +26,7 @@ jobs:
     runs-on: ubuntu_latest
     name: install deps and build
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
       - run: npm install
           npm run build
