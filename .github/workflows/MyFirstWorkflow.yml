@@ -8,7 +8,7 @@ jobs:
   MY_FIRST_JOB:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "\U0001F525 Starting Workflow"
+      - run: echo "🔥 Starting Workflow"
 
       - name: Checkout
         uses: actions/checkout@v4
