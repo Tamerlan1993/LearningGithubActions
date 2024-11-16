@@ -9,20 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🔥 Starting Workflow"
-
       - name: List files in repository
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
-
-  generate-a-secret-output:
-    runs-on: ubuntu-latest
-    steps:
-      - id: sets-a-secret
-        name: Generate, mask, and output a secret
-        run: |
-          the_secret=$((RANDOM))
-          echo "::add-mask::$the_secret"
-      - name: Use that secret output (protected by a mask)
-        run: |
-          echo "the secret number is ${{ steps.sets-a-secret.outputs.secretnumber }}"
+      - run: echo '### Markdown :rocket:' >> $GITHUB_STEP_SUMMARY
+      - run: echo '<h1>Great feature!</h1>' >> $GITHUB_STEP_SUMMAsRY
