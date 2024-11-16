@@ -18,6 +18,7 @@ jobs:
   job_2:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Set color
         id: color-generator
         run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
