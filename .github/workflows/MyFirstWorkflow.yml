@@ -1,22 +1,19 @@
 name: MY_FIRST_WORKFLOW
-on: 
+on:
   push:
-    branches: 
-    - main
+    branches:
+      - main
   workflow_dispatch:
 jobs:
   MY_FIRST_JOB:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ":fire:Starting Workflow"
-      
+      - run: echo "\U0001F525 Starting Workflow"
+
       - name: Checkout
-        uses: actions/checkout@v4 
-      
+        uses: actions/checkout@v4
+
       - name: List files in repository
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
-        
-     
-    
