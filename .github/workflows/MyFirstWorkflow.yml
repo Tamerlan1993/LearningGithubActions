@@ -10,10 +10,16 @@ jobs:
     steps:
       - run: echo "🔥 Starting Workflow"
 
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: List files in repository
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
+
+  job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set color
+        id: color-generator
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: Get color
+        run: echo "${{ steps.color-generator.outputs.SELECTED_COLOR }}"
